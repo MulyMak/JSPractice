@@ -31,6 +31,9 @@ const game = () => {
         options.forEach(option => {
             option.addEventListener("click", function() {
                 //Computer Choice
+                playerHand.src = `./assets/rock.png`;
+                computerHand.src = `./assets/rock.png`;
+
                 const computerNumber = Math.floor(Math.random() * 3);
                 const computerChoice = computerOptions[computerNumber];
 
@@ -42,8 +45,12 @@ const game = () => {
                     computerHand.src = `./assets/${computerChoice}.png`;
                 }, 2000);
                 //Animation
+                console.log(playerHand.style.animation);
+
                 playerHand.style.animation = "shakePlayer 2s ease";
                 computerHand.style.animation = "shakeComputer 2s ease";
+                console.log(playerHand.style.animation);
+
             });
         });
     };
@@ -97,12 +104,10 @@ const game = () => {
                 winner.textContent = "Computer Wins";
                 cScore++;
                 updateScore();
-                return;
             } else {
                 winner.textContent = "Player Wins";
                 pScore++;
                 updateScore();
-                return;
             }
         }
     };

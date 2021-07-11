@@ -76,6 +76,7 @@ section {
 
 .player-hand {
     transform: rotateY(180deg);
+    animation: shakePlayer 2s ease;
 }
 
 div.fadeOut {
@@ -86,6 +87,7 @@ div.fadeOut {
 div.fadeIn {
     opacity: 1;
     pointer-events: all;
+
 }
 
 @keyframes shakePlayer {
